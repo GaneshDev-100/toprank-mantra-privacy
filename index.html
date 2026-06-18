@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Topper Mantra</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1a1a1a}
+  h1{font-size:1.8rem;margin-bottom:4px}
+  h2{font-size:1.2rem;margin-top:32px;border-bottom:1px solid #eee;padding-bottom:6px}
+  .meta{color:#666;font-size:0.9rem;margin-bottom:24px}
+  ul{padding-left:22px}
+  li{margin:4px 0}
+  a{color:#1A2660}
+  code{background:#f4f4f6;padding:2px 5px;border-radius:4px;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="meta">App: <strong>Topper Mantra</strong> (Android, package <code>com.toppermantra.app</code>)<br>
+Last updated: 2026-06-18<br>
+Hosted at: <a href="https://ganeshdev-100.github.io/topper-mantra-privacy/">ganeshdev-100.github.io/topper-mantra-privacy</a><br>
+Contact: <a href="mailto:ganeshg.formal@gmail.com">ganeshg.formal@gmail.com</a></p>
+
+<p>Topper Mantra ("we", "us", "the app") is an Android app for UPSC Civil Services exam preparation. This policy explains what data we collect, why we collect it, where it lives, and what choices you have.</p>
+
+<h2>1. Data we collect</h2>
+<ul>
+  <li><strong>Google account email + display name</strong> — collected when you sign in via Google Sign-In. Used to identify your account and personalise your progress.</li>
+  <li><strong>Phone number (E.164 format)</strong> — collected when you link a phone before a paid purchase. We store an <em>encrypted</em> form using AES-256-GCM; the raw number never leaves our database in plaintext. Used to issue subscription receipts, recover your account if you lose Google sign-in access, and verify identity at purchase time. We never use it for marketing or calls.</li>
+  <li><strong>Practice progress</strong> — which UPSC questions you've attempted, the options you selected, and whether the answer was correct. Used to compute your stats and personalise the experience.</li>
+  <li><strong>Payment metadata</strong> — order IDs, amounts, status, and the Razorpay payment ID for each purchase. We do <em>not</em> store card numbers, CVV, UPI PINs, or bank credentials — those are handled directly by Razorpay.</li>
+  <li><strong>Device identifiers</strong> — an Android-ID-derived hash is used once at trial start to prevent multiple free trials from the same device. The hash is non-reversible.</li>
+  <li><strong>Diagnostic logs</strong> — anonymous error and crash information to fix bugs.</li>
+</ul>
+
+<h2>2. Where your data is stored</h2>
+<ul>
+  <li><strong>Neon Postgres (managed cloud Postgres, AWS region <code>ap-southeast-1</code> Singapore).</strong> Primary store for user accounts, progress, and payment metadata. Encrypted at rest by Neon. The <code>phone_hash</code> column stores the AES-256-GCM ciphertext of your phone number; the encryption key lives only on our application server.</li>
+  <li><strong>Fly.io (Mumbai region <code>bom</code>).</strong> Hosts the backend API. Logs are retained for 30 days for debugging.</li>
+  <li><strong>Firebase Authentication.</strong> Used as the OAuth + phone OTP provider. Firebase stores your Google sign-in identifier and (if you've linked one) your phone number, separately under our Firebase project <code>topper-mantra-100</code>.</li>
+  <li><strong>Razorpay.</strong> Processes payments. Razorpay's privacy policy applies during checkout: <a href="https://razorpay.com/privacy">razorpay.com/privacy</a>.</li>
+  <li><strong>Google AdMob.</strong> Serves ads to free-tier and trial users. AdMob's privacy practices: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
+</ul>
+
+<h2>3. How we use your data</h2>
+<ul>
+  <li>Authenticate you and keep you logged in.</li>
+  <li>Sync your practice progress across devices when you sign in on a new device.</li>
+  <li>Process the one-shot Buy Full Access payment and the optional 24-hour free trial.</li>
+  <li>Detect duplicate trial signups from the same device.</li>
+  <li>Settle the referral program (10 % off for first-time buyers using a referrer code, 100 points reward to the referrer on first verified payment).</li>
+  <li>Show ads to free-tier users (we don't show ads to paid users).</li>
+  <li>Send transactional emails (subscription receipts and feedback acknowledgements).</li>
+</ul>
+
+<h2>4. Data we do <em>not</em> collect</h2>
+<ul>
+  <li>Card numbers, CVV, UPI PINs, bank login credentials — these are entered into Razorpay's checkout sheet, never touch our servers.</li>
+  <li>Contacts, SMS, call logs, microphone, camera, fine location, photos. The app does not request any of these permissions.</li>
+  <li>Marketing profile data. We do not sell your information.</li>
+</ul>
+
+<h2>5. Third-party SDKs in the app</h2>
+<ul>
+  <li><strong>Firebase Authentication / App Check / Play Integrity</strong> — Google.</li>
+  <li><strong>Google AdMob</strong> — Google. Personalised vs non-personalised ad consent is handled by Google's UMP SDK in jurisdictions that require it.</li>
+  <li><strong>Razorpay Checkout</strong> — Razorpay Software Pvt. Ltd.</li>
+  <li><strong>Android Credential Manager</strong> — Google, for the Google Sign-In flow.</li>
+</ul>
+
+<h2>6. Your rights</h2>
+<ul>
+  <li><strong>Access / export.</strong> Email us at <a href="mailto:ganeshg.formal@gmail.com">ganeshg.formal@gmail.com</a> from your registered Google account to receive a copy of your data within 30 days.</li>
+  <li><strong>Deletion.</strong> Email us the same way to delete your account. We will purge your user record, progress, and phone-hash within 30 days, except records we are legally required to retain (e.g. payment receipts under Indian tax law — 8 years).</li>
+  <li><strong>Opt-out of personalised ads.</strong> Use your Android device's Ad Settings to reset / opt out of the Advertising ID.</li>
+</ul>
+
+<h2>7. Children</h2>
+<p>Topper Mantra is intended for users 18 years and older. We do not knowingly collect data from children under 13. If we learn that we have, we will delete it.</p>
+
+<h2>8. Security</h2>
+<p>All API traffic uses HTTPS with TLS 1.2+. Phone numbers are stored as AES-256-GCM ciphertext. JWTs are HMAC-SHA-256 signed. Razorpay HMAC signatures are verified server-side on every payment confirmation.</p>
+
+<h2>9. Changes to this policy</h2>
+<p>If we change this policy materially, we will update the "Last updated" date above and notify you in the app on next launch. Continued use of the app after such notice constitutes acceptance.</p>
+
+<h2>10. Contact</h2>
+<p>Email <a href="mailto:ganeshg.formal@gmail.com">ganeshg.formal@gmail.com</a>. We aim to reply within 5 business days.</p>
+</body>
+</html>
