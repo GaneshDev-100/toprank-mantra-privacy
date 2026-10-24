@@ -12,15 +12,15 @@
   ul{padding-left:22px}
   li{margin:4px 0}
   a{color:#1A2660}
-  nav{font-size:0.9rem;margin-bottom:24px}
   code{background:#f4f4f6;padding:2px 5px;border-radius:4px;font-size:0.9em}
+  nav{font-size:0.9rem;margin-bottom:24px}
 </style>
 </head>
 <body>
 <nav><a href="index.html">Privacy</a> · <a href="pricing.html">Pricing</a> · <a href="terms.html">Terms</a> · <a href="refund.html">Refund &amp; Cancellation</a> · <a href="delete-account.html">Delete account</a></nav>
 <h1>Privacy Policy</h1>
 <p class="meta">App: <strong>Toprank Mantra</strong> (Android, package <code>com.toppermantra.app</code>)<br>
-Last updated: 2026-06-28<br>
+Last updated: 2026-10-22<br>
 Hosted at: <a href="https://ganeshdev-100.github.io/toprank-mantra-privacy/">ganeshdev-100.github.io/toprank-mantra-privacy</a><br>
 Contact: <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gmail.com</a></p>
 
@@ -33,6 +33,8 @@ Contact: <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gm
   <li><strong>Practice progress</strong> — which UPSC questions you've attempted, the options you selected, and whether the answer was correct. Used to compute your stats and personalise the experience.</li>
   <li><strong>Payment metadata</strong> — order IDs, amounts, status, and the Razorpay payment ID for each purchase. We do <em>not</em> store card numbers, CVV, UPI PINs, or bank credentials — those are handled directly by Razorpay.</li>
   <li><strong>Device identifiers</strong> — an Android-ID-derived hash is used once at trial start to prevent multiple free trials from the same device. The hash is non-reversible.</li>
+  <li><strong>Push notification token</strong> — a Firebase Cloud Messaging token for your device, registered when the app is installed (even before you sign in) and linked to your account once you do. Used only to send the question of the day, study reminders and offers.</li>
+  <li><strong>App usage events</strong> — Firebase Analytics records events such as signing in, starting the free trial, buying Full Access and answering the daily question, together with an app-instance ID and your device's Advertising ID. Used to understand which features help and to measure our ad campaigns. It never includes your answers' content, email or phone number.</li>
   <li><strong>Diagnostic logs</strong> — anonymous error and crash information to fix bugs.</li>
 </ul>
 
@@ -41,6 +43,7 @@ Contact: <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gm
   <li><strong>Neon Postgres (managed cloud Postgres, AWS region <code>ap-southeast-1</code> Singapore).</strong> Primary store for user accounts, progress, and payment metadata. Encrypted at rest by Neon. The <code>phone_hash</code> column stores the AES-256-GCM ciphertext of your phone number; the encryption key lives only on our application server.</li>
   <li><strong>Fly.io (Mumbai region <code>bom</code>).</strong> Hosts the backend API. Logs are retained for 30 days for debugging.</li>
   <li><strong>Firebase Authentication.</strong> Used as the OAuth + phone OTP provider. Firebase stores your Google sign-in identifier and (if you've linked one) your phone number, separately under our Firebase project <code>topper-mantra-100</code>.</li>
+  <li><strong>Firebase Cloud Messaging and Firebase Analytics.</strong> Deliver push notifications and store app usage events under the same Firebase project. Google's privacy practices: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
   <li><strong>Razorpay.</strong> Processes payments. Razorpay's privacy policy applies during checkout: <a href="https://razorpay.com/privacy">razorpay.com/privacy</a>.</li>
   <li><strong>Google AdMob.</strong> Serves ads to free-tier and trial users. AdMob's privacy practices: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
 </ul>
@@ -53,6 +56,8 @@ Contact: <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gm
   <li>Detect duplicate trial signups from the same device.</li>
   <li>Settle the referral program (10 % off for first-time buyers using a referrer code, 100 points reward to the referrer on first verified payment).</li>
   <li>Show ads to free-tier users (we don't show ads to paid users).</li>
+  <li>Send push notifications: the question of the day, study reminders, offers, and (before you sign in) a reminder to sign in so your progress is saved.</li>
+  <li>Measure app usage and the performance of our ads.</li>
   <li>Send transactional emails (subscription receipts and feedback acknowledgements).</li>
 </ul>
 
@@ -66,6 +71,7 @@ Contact: <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gm
 <h2>5. Third-party SDKs in the app</h2>
 <ul>
   <li><strong>Firebase Authentication / App Check / Play Integrity</strong> — Google.</li>
+  <li><strong>Firebase Cloud Messaging / Firebase Analytics</strong> — Google.</li>
   <li><strong>Google AdMob</strong> — Google. Personalised vs non-personalised ad consent is handled by Google's UMP SDK in jurisdictions that require it.</li>
   <li><strong>Razorpay Checkout</strong> — Razorpay Software Pvt. Ltd.</li>
   <li><strong>Android Credential Manager</strong> — Google, for the Google Sign-In flow.</li>
@@ -75,6 +81,7 @@ Contact: <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gm
 <ul>
   <li><strong>Access / export.</strong> Email us at <a href="mailto:toppermantrafeedback@gmail.com">toppermantrafeedback@gmail.com</a> from your registered Google account to receive a copy of your data within 30 days.</li>
   <li><strong>Deletion.</strong> Email us the same way to delete your account. We will purge your user record, progress, and phone-hash within 30 days, except records we are legally required to retain (e.g. payment receipts under Indian tax law — 8 years).</li>
+  <li><strong>Turn off notifications.</strong> Use your Android device's notification settings for Toprank Mantra.</li>
   <li><strong>Opt-out of personalised ads.</strong> Use your Android device's Ad Settings to reset / opt out of the Advertising ID.</li>
 </ul>
 
